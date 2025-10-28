@@ -5,17 +5,43 @@ function getComputerChoice() {
     // Convert random integer to text
     switch (randomNumber){
         case 0:
-            return 'Rock!';
+            return 'rock';
             break;
 
         case 1:
-            return 'Paper!';
+            return 'paper';
             break;
         
         default:
-            return 'Scissors!'
+            return 'scissors'
             break;
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    // Get user input
+    let humanInput = window.prompt('Make your choice! Rock, paper, scissors...');
+    
+    // Return user input
+    if (humanInput.toLowerCase() === 'rock'){
+        return 'rock'
+    }
+
+    else if (humanInput.toLowerCase() === 'paper'){
+        return 'paper';
+    }
+    
+    else if (humanInput.toLowerCase() === 'else'){
+        return 'scissors';
+    }
+
+    // If not valid, return null
+    else {
+        return null;
+    }
+}
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+console.log(`Computer choice: ${computerChoice}`);
+console.log(`Human choice: ${humanChoice}`);
